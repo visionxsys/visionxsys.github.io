@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="VisionXSystems Services — Web Development, 2D Animation, Shopify, WordPress, AI Chatbot, Figma Design. Transparent Starter/Pro/Enterprise pricing."/>
+<meta property="og:title" content="VisionXSystems — Services &amp; Pricing"/>
+<meta property="og:image" content="images/logo-transparent.png"/>
+<title>Services &amp; Pricing — VisionXSystems</title>
+<link rel="icon" type="image/png" href="images/favicon-32.png"/>
+<link rel="apple-touch-icon" href="images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<header class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link">
+      <img src="images/logo-transparent.png" alt="VisionXSystems Logo" style="height:36px; width:auto;"/>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html"     class="nav-link" id="nav-home">Home</a>
+      <a href="services.html"  class="nav-link active" id="nav-services">Services</a>
+      <a href="portfolio.html" class="nav-link" id="nav-portfolio">Portfolio</a>
+      <a href="contact.html"   class="nav-link" id="nav-contact">Contact</a>
+    </nav>
+    <a href="contact.html" class="bp nav-cta" id="nav-cta">Get in Touch</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html"     class="mobile-link">Home</a>
+    <a href="services.html"  class="mobile-link">Services</a>
+    <a href="portfolio.html" class="mobile-link">Portfolio</a>
+    <a href="contact.html"   class="mobile-link">Contact</a>
+    <a href="contact.html"   class="bp mobile-cta">Get in Touch</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero" id="services-top">
+  <div class="hero-grid"></div>
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="page-hero-inner">
+    <div class="hero-badge afu"><span class="badge-dot"></span>FULL-SERVICE DIGITAL AGENCY</div>
+    <h1 class="page-hero-title afu d1">Services &amp; <span class="gt">Pricing</span></h1>
+    <p class="page-hero-sub afu d2">Everything your business needs to dominate digitally — under one roof, with transparent pricing.</p>
+  </div>
+</section>
+
+<!-- ALL SERVICES -->
+<section class="services-section" id="all-services">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">WHAT WE OFFER</p>
+      <h2 class="section-title">Our <span class="gt">Services</span></h2>
+      <p class="section-sub">End-to-end digital solutions crafted to scale your business globally.</p>
+    </div>
+    <div class="services-grid">
+      <!-- Web Dev -->
+      <div class="service-card gc reveal featured" id="svc-web">
+        <div class="service-icon-wrap web">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="service-featured-tag">&#10024; MOST POPULAR</div>
+        <h3>Web Development</h3>
+        <p>Responsive, blazing-fast websites built to convert visitors into paying customers with pixel-perfect precision.</p>
+        <div class="service-tags"><span>React</span><span>Next.js</span><span>Node.js</span></div>
+        <div class="service-badge">CUSTOM BUILD</div>
+        <div class="service-line"></div>
+      </div>
+
+      <!-- WordPress -->
+      <div class="service-card gc reveal" id="svc-wp">
+        <div class="service-icon-wrap wp">
+<i class="fa-brands fa-wordpress"></i>        </div>
+        <h3>WordPress</h3>
+        <p>Powerful WordPress websites with custom themes, plugins, and CMS setups built for speed and control.</p>
+        <div class="service-tags"><span>WooCommerce</span><span>CMS</span><span>SEO</span></div>
+        <div class="service-badge">CMS</div>
+        <div class="service-line"></div>
+      </div>
+      <!-- AI Chatbot -->
+      <div class="service-card gc reveal" id="svc-ai">
+        <div class="service-icon-wrap ai">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a2 2 0 0 1 2 2v1a7 7 0 0 1 0 14v1a2 2 0 0 1-4 0v-1a7 7 0 0 1 0-14V4a2 2 0 0 1 2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>AI Chatbot</h3>
+        <p>Smart AI-powered chatbots that automate support, qualify leads, and drive conversions around the clock.</p>
+        <div class="service-tags"><span>GPT-4</span><span>NLP</span><span>Automation</span></div>
+        <div class="service-badge">AI POWERED</div>
+        <div class="service-line"></div>
+      </div>
+      <!-- Figma Design -->
+      <div class="service-card gc reveal" id="svc-figma">
+        <div class="service-icon-wrap fig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 0 1-7 0z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/></svg>
+        </div>
+        <h3>Figma Design</h3>
+        <p>Stunning UI/UX designs in Figma — wireframes, prototypes, and design systems that delight users.</p>
+        <div class="service-tags"><span>UI/UX</span><span>Prototyping</span><span>Design System</span></div>
+        <div class="service-badge">DESIGN</div>
+        <div class="service-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">TRANSPARENT PRICING</p>
+      <h2 class="section-title">Simple, Clear <span class="gt">Pricing</span></h2>
+      <p class="section-sub">No hidden fees. Pick your service and choose the plan that fits.</p>
+    </div>
+
+    <div class="pricing-service-tabs">
+      <button class="pricing-tab active" data-service="web" id="pt-web">Web Dev</button>
+      <button class="pricing-tab" data-service="wordpress" id="pt-wordpress">WordPress</button>
+      <button class="pricing-tab" data-service="ai" id="pt-ai">AI Chatbot</button>
+      <button class="pricing-tab" data-service="figma" id="pt-figma">Figma Design</button>
+    </div>
+
+    <!-- Web Dev Pricing -->
+    <div class="pricing-panel active" id="pricing-web">
+      <div class="pricing-card gc reveal">
+        <div class="pricing-tier">STARTER</div>
+        <div class="pricing-price"><s style="font-size:0.6em;color:#fff;text-decoration-color:red;text-decoration-thickness:2px;">$299</s> $99<span>/project</span></div>
+        <div class="pricing-desc">Perfect for landing pages, portfolios, and small business sites.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Up to 5 pages</li>
+          <li><span class="pf-check">✓</span> Responsive design</li>
+          <li><span class="pf-check">✓</span> Basic SEO setup</li>
+          <li><span class="pf-check">✓</span> 2 revision rounds</li>
+          <li><span class="pf-check">✓</span> 72 hrs delivery</li>
+          <li><span class="pf-cross">✗</span> Custom animations</li>
+          <li><span class="pf-cross">✗</span> CMS integration</li>
+        </ul>
+        <a href="contact.html" class="bo btn-full" id="price-web-starter">Get Started</a>
+        <div class="pricing-line"></div>
+      </div>
+      <div class="pricing-card gc popular reveal">
+        <div class="pricing-popular-tag">&#10024; BEST VALUE</div>
+        <div class="pricing-tier">PRO</div>
+        <div class="pricing-price"><s style="font-size:0.6em;color:#fff;text-decoration-color:red;text-decoration-thickness:2px;">$799</s> $299<span>/project</span></div>
+        <div class="pricing-desc">Full web app or business site with custom design and integrations.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Up to 20 pages</li>
+          <li><span class="pf-check">✓</span> Custom animations (GSAP)</li>
+          <li><span class="pf-check">✓</span> Advanced SEO + sitemap</li>
+          <li><span class="pf-check">✓</span> CMS / Admin panel</li>
+          <li><span class="pf-check">✓</span> 4 revision rounds</li>
+          <li><span class="pf-check">✓</span> 7 day delivery</li>
+          <li><span class="pf-check">✓</span> 1-month free support</li>
+        </ul>
+        <a href="contact.html" class="bp btn-full" id="price-web-pro">Get Started</a>
+        <div class="pricing-line"></div>
+      </div>
+      <div class="pricing-card gc reveal">
+        <div class="pricing-tier">ENTERPRISE</div>
+        <div class="pricing-price">Custom<span>/project</span></div>
+        <div class="pricing-desc">Full-stack web application, SaaS platform, or enterprise portal.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Full-stack development</li>
+          <li><span class="pf-check">✓</span> Auth &amp; user management</li>
+          <li><span class="pf-check">✓</span> API &amp; third-party integrations</li>
+          <li><span class="pf-check">✓</span> Unlimited revisions</li>
+          <li><span class="pf-check">✓</span> Dedicated project manager</li>
+          <li><span class="pf-check">✓</span> 3-month support SLA</li>
+          <li><span class="pf-check">✓</span> CI/CD + deployment</li>
+        </ul>
+        <a href="contact.html" class="bo btn-full" id="price-web-enterprise">Request Quote</a>
+        <div class="pricing-line"></div>
+      </div>
+    </div>
+
+
+
+    <!-- WordPress Pricing -->
+    <div class="pricing-panel" id="pricing-wordpress">
+      <div class="pricing-card gc reveal">
+        <div class="pricing-tier">STARTER</div>
+        <div class="pricing-price"><s style="font-size:0.6em;color:#fff;text-decoration-color:red;text-decoration-thickness:2px;">$249</s> $150<span>/site</span></div>
+        <div class="pricing-desc">WordPress site with premium theme, plugins and content setup.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Up to 6 pages</li>
+          <li><span class="pf-check">✓</span> Premium theme setup</li>
+          <li><span class="pf-check">✓</span> SEO plugin (Yoast)</li>
+          <li><span class="pf-check">✓</span> Contact forms</li>
+          <li><span class="pf-check">✓</span> 2 revision rounds</li>
+          <li><span class="pf-cross">✗</span> Custom theme development</li>
+          <li><span class="pf-cross">✗</span> WooCommerce</li>
+        </ul>
+        <a href="contact.html" class="bo btn-full" id="price-wp-starter">Get Started</a>
+        <div class="pricing-line"></div>
+      </div>
+      <div class="pricing-card gc popular reveal">
+        <div class="pricing-popular-tag">&#10024; BEST VALUE</div>
+        <div class="pricing-tier">PRO</div>
+        <div class="pricing-price"><s style="font-size:0.6em;color:#fff;text-decoration-color:red;text-decoration-thickness:2px;">$699</s> $499<span>/site</span></div>
+        <div class="pricing-desc">Custom WordPress theme with WooCommerce and full CMS training.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Custom theme (child theme)</li>
+          <li><span class="pf-check">✓</span> WooCommerce setup</li>
+          <li><span class="pf-check">✓</span> Advanced SEO</li>
+          <li><span class="pf-check">✓</span> Custom plugin integration</li>
+          <li><span class="pf-check">✓</span> 4 revision rounds</li>
+          <li><span class="pf-check">✓</span> CMS training session</li>
+          <li><span class="pf-check">✓</span> 1-month free support</li>
+        </ul>
+        <a href="contact.html" class="bp btn-full" id="price-wp-pro">Get Started</a>
+        <div class="pricing-line"></div>
+      </div>
+      <div class="pricing-card gc reveal">
+        <div class="pricing-tier">ENTERPRISE</div>
+        <div class="pricing-price">Custom<span>/site</span></div>
+        <div class="pricing-desc">Headless WordPress, multi-site, or complex membership platforms.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Headless WP + Next.js</li>
+          <li><span class="pf-check">✓</span> Custom plugin development</li>
+          <li><span class="pf-check">✓</span> Membership / LMS setup</li>
+          <li><span class="pf-check">✓</span> Performance audit</li>
+          <li><span class="pf-check">✓</span> Unlimited revisions</li>
+          <li><span class="pf-check">✓</span> Dedicated dev team</li>
+          <li><span class="pf-check">✓</span> 3-month SLA</li>
+        </ul>
+        <a href="contact.html" class="bo btn-full" id="price-wp-enterprise">Request Quote</a>
+        <div class="pricing-line"></div>
+      </div>
+    </div>
+
+    <!-- AI Chatbot Pricing -->
+    <div class="pricing-panel" id="pricing-ai">
+      <div class="pricing-card gc reveal">
+        <div class="pricing-tier">STARTER</div>
+        <div class="pricing-price"><s style="font-size:0.6em;color:#fff;text-decoration-color:red;text-decoration-thickness:2px;">$349</s> $199<span>/bot</span></div>
+        <div class="pricing-desc">FAQ chatbot trained on your content and embedded on your site.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> GPT-4o powered</li>
+          <li><span class="pf-check">✓</span> Website embed widget</li>
+          <li><span class="pf-check">✓</span> Custom FAQ training</li>
+          <li><span class="pf-check">✓</span> Basic analytics</li>
+          <li><span class="pf-check">✓</span> 2 revision rounds</li>
+          <li><span class="pf-cross">✗</span> CRM integration</li>
+          <li><span class="pf-cross">✗</span> Multi-platform</li>
+        </ul>
+        <a href="contact.html" class="bo btn-full" id="price-ai-starter">Get Started</a>
+        <div class="pricing-line"></div>
+      </div>
+      <div class="pricing-card gc popular reveal">
+        <div class="pricing-popular-tag">&#10024; BEST VALUE</div>
+        <div class="pricing-tier">PRO</div>
+        <div class="pricing-price"><s style="font-size:0.6em;color:#fff;text-decoration-color:red;text-decoration-thickness:2px;">$899</s> $599<span>/bot</span></div>
+        <div class="pricing-desc">Full RAG chatbot with CRM integration and multi-platform deployment.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> RAG (custom knowledge base)</li>
+          <li><span class="pf-check">✓</span> Website + WhatsApp</li>
+          <li><span class="pf-check">✓</span> Lead capture &amp; CRM sync</li>
+          <li><span class="pf-check">✓</span> Conversation analytics</li>
+          <li><span class="pf-check">✓</span> 4 revision rounds</li>
+          <li><span class="pf-check">✓</span> Human escalation flow</li>
+          <li><span class="pf-check">✓</span> 1-month free support</li>
+        </ul>
+        <a href="contact.html" class="bp btn-full" id="price-ai-pro">Get Started</a>
+        <div class="pricing-line"></div>
+      </div>
+      <div class="pricing-card gc reveal">
+        <div class="pricing-tier">ENTERPRISE</div>
+        <div class="pricing-price">Custom<span>/bot</span></div>
+        <div class="pricing-desc">End-to-end AI automation pipeline with custom model fine-tuning.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Fine-tuned custom model</li>
+          <li><span class="pf-check">✓</span> All platforms + API</li>
+          <li><span class="pf-check">✓</span> Full automation pipeline</li>
+          <li><span class="pf-check">✓</span> ERP / CRM integration</li>
+          <li><span class="pf-check">✓</span> Unlimited revisions</li>
+          <li><span class="pf-check">✓</span> Dedicated AI engineer</li>
+          <li><span class="pf-check">✓</span> GDPR / data compliance</li>
+        </ul>
+        <a href="contact.html" class="bo btn-full" id="price-ai-enterprise">Request Quote</a>
+        <div class="pricing-line"></div>
+      </div>
+    </div>
+
+    <!-- Figma Design Pricing -->
+    <div class="pricing-panel" id="pricing-figma">
+      <div class="pricing-card gc reveal">
+        <div class="pricing-tier">STARTER</div>
+        <div class="pricing-price"><s style="font-size:0.6em;color:#fff;text-decoration-color:red;text-decoration-thickness:2px;">$199</s> $150<span>/project</span></div>
+        <div class="pricing-desc">Wireframes and basic UI screens for landing pages or apps.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Up to 8 screens</li>
+          <li><span class="pf-check">✓</span> Desktop + Mobile</li>
+          <li><span class="pf-check">✓</span> Figma source file</li>
+          <li><span class="pf-check">✓</span> Basic component library</li>
+          <li><span class="pf-check">✓</span> 2 revision rounds</li>
+          <li><span class="pf-cross">✗</span> Prototype / interactions</li>
+          <li><span class="pf-cross">✗</span> Brand identity</li>
+        </ul>
+        <a href="contact.html" class="bo btn-full" id="price-figma-starter">Get Started</a>
+        <div class="pricing-line"></div>
+      </div>
+      <div class="pricing-card gc popular reveal">
+        <div class="pricing-popular-tag">&#10024; BEST VALUE</div>
+        <div class="pricing-tier">PRO</div>
+        <div class="pricing-price"><s style="font-size:0.6em;color:#fff;text-decoration-color:red;text-decoration-thickness:2px;">$599</s> $399<span>/project</span></div>
+        <div class="pricing-desc">Full app or website UI/UX with interactive prototype and design system.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Unlimited screens</li>
+          <li><span class="pf-check">✓</span> Interactive prototype</li>
+          <li><span class="pf-check">✓</span> Full design system</li>
+          <li><span class="pf-check">✓</span> Handoff-ready specs</li>
+          <li><span class="pf-check">✓</span> 4 revision rounds</li>
+          <li><span class="pf-check">✓</span> User flow diagrams</li>
+          <li><span class="pf-check">✓</span> Export assets included</li>
+        </ul>
+        <a href="contact.html" class="bp btn-full" id="price-figma-pro">Get Started</a>
+        <div class="pricing-line"></div>
+      </div>
+      <div class="pricing-card gc reveal">
+        <div class="pricing-tier">ENTERPRISE</div>
+        <div class="pricing-price">Custom<span>/project</span></div>
+        <div class="pricing-desc">Full brand identity, design system, logo, and UI kit for large products.</div>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span> Logo + brand identity</li>
+          <li><span class="pf-check">✓</span> Complete design system</li>
+          <li><span class="pf-check">✓</span> Social media kit</li>
+          <li><span class="pf-check">✓</span> Accessibility (WCAG) audit</li>
+          <li><span class="pf-check">✓</span> Unlimited revisions</li>
+          <li><span class="pf-check">✓</span> Developer handoff sessions</li>
+          <li><span class="pf-check">✓</span> Brand guidelines PDF</li>
+        </ul>
+        <a href="contact.html" class="bo btn-full" id="price-figma-enterprise">Request Quote</a>
+        <div class="pricing-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left">
+        <p class="section-label" style="justify-content:flex-start;">ABOUT US</p>
+        <h2 class="section-title" style="text-align:left;">Who We <span class="gt">Are</span></h2>
+        <p class="about-desc">VisionXSystems is a premium software house founded with one mission: to build digital products that actually move the needle. We are a team of engineers, designers, and AI specialists who refuse to ship anything average.</p>
+        <p class="about-desc">From bootstrapped startups to scaling enterprises, we've partnered with businesses across 15+ countries — delivering solutions that are fast, secure, and built to grow with you.</p>
+        <ul class="about-list">
+          <li><span class="check-icon">&#10003;</span> 5+ projects completed globally</li>
+          <li><span class="check-icon">&#10003;</span> AI-first development mindset</li>
+          <li><span class="check-icon">&#10003;</span> Full design-to-development pipeline</li>
+          <li><span class="check-icon">&#10003;</span> Dedicated support on every project</li>
+        </ul>
+        <a href="contact.html" class="bp" id="about-cta">Work With Us &rarr;</a>
+      </div>
+      <div class="about-cards">
+        <div class="about-card gc reveal">
+          <div class="about-card-icon">&#127760;</div>
+          <div><strong>Global Reach</strong><p>Clients across 15+ countries</p></div>
+        </div>
+        <div class="about-card gc reveal">
+          <div class="about-card-icon">&#128274;</div>
+          <div><strong>Secure</strong><p>Enterprise-grade security</p></div>
+        </div>
+        <div class="about-card gc reveal">
+          <div class="about-card-icon">&#127881;</div>
+          <div><strong>Happy Clients</strong><p>15+ Happy customers</p></div>
+        </div>
+        <div class="about-card gc reveal">
+          <div class="about-card-icon">&#128202;</div>
+          <div><strong>Data-Driven</strong><p>Analytics from day one</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-glow"></div>
+  <div class="cta-content">
+    <h2>Not Sure Which Plan?<br/><span class="gt">Let's Chat.</span></h2>
+    <p>Tell us about your project and we'll recommend the right service and plan for you — no commitment required.</p>
+    <a href="contact.html" class="bp btn-large" id="services-cta-btn">Get a Free Consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-wrap">
+        <a href="index.html" class="nav-logo">
+          <span class="lv">VISION</span><span class="lx">X</span><span class="ls">SYSTEMS</span>
+        </a>
+      </div>
+      <p class="footer-tagline">Premium software house building AI systems, web platforms, and digital products that drive real business results.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html">Web Development</a>
+        <a href="services.html">AI Chatbot</a>
+        <a href="services.html">Figma Design</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:visionxsystem@gmail.com">visionxsystem@gmail.com</a>
+        <span>Response within 12 hours</span>
+        <span>Available worldwide</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 VisionXSystems. All rights reserved.</p>
+    <p>Crafted with &#10084;&#65039; for digital excellence.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

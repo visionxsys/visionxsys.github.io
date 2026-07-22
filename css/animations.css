@@ -1,0 +1,247 @@
+/* =============================================
+   VISIONXSYSTEMS — ANIMATIONS
+   ============================================= */
+
+/* ===== KEYFRAMES ===== */
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.1); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lineGrow {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes borderPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,220,130,0); }
+  50%       { box-shadow: 0 0 0 8px rgba(0,220,130,0.08); }
+}
+
+@keyframes bgShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes particleRise {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.5); }
+  20%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-100px) scale(0); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ===== HOVER MICRO-ANIMATIONS ===== */
+
+/* Tilt on hover (applied via JS) */
+.tilt-card { transform-style: preserve-3d; }
+
+/* Ripple */
+.ripple {
+  position: relative; overflow: hidden;
+}
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+.ripple:active::after {
+  width: 300px; height: 300px; opacity: 0;
+}
+
+/* Floating animation for decorative elements */
+.float { animation: float 4s ease-in-out infinite; }
+.float-delay { animation: float 4s ease-in-out 1s infinite; }
+
+/* Glow on hover */
+.glow-hover { transition: box-shadow 0.3s ease; }
+.glow-hover:hover { box-shadow: 0 0 30px rgba(0,220,130,0.3); }
+
+/* Gradient border animation */
+.grad-border {
+  position: relative;
+}
+.grad-border::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--g), var(--teal), var(--g));
+  background-size: 200%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  animation: gradientShift 3s ease infinite;
+}
+.grad-border:hover::before { opacity: 1; }
+
+/* Slide-in from side */
+.slide-left  { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.slide-right { opacity: 0; transform: translateX(40px);  transition: opacity 0.7s ease, transform 0.7s ease; }
+.slide-left.visible, .slide-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Scale reveal */
+.scale-reveal { opacity: 0; transform: scale(0.9); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scale-reveal.visible { opacity: 1; transform: scale(1); }
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+
+/* Skeleton shimmer for placeholders */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ===== PAGE TRANSITION ===== */
+.page-transition {
+  position: fixed; inset: 0;
+  background: var(--bg); z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.page-transition.entering { transform: translateX(0); }
+.page-transition.leaving  { transform: translateX(-100%); }
+
+/* ===== CURSOR GLOW ===== */
+.cursor-glow {
+  width: 20px; height: 20px;
+  background: rgba(0,220,130,0.6);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.1s ease, opacity 0.3s ease;
+  filter: blur(4px);
+  mix-blend-mode: screen;
+}
+
+/* ===== TYPING CURSOR ===== */
+.typing-cursor::after {
+  content: '|';
+  color: var(--g);
+  animation: cursor 0.8s ease-in-out infinite;
+  margin-left: 1px;
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+#scroll-progress {
+  position: fixed; top: 0; left: 0;
+  height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--g), var(--teal));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(0,220,130,0.5);
+}
+
+/* ===== TOAST NOTIFICATION ===== */
+.toast {
+  position: fixed; bottom: 24px; right: 24px;
+  padding: 14px 24px;
+  background: rgba(0,220,130,0.1);
+  border: 1px solid var(--bgreen);
+  border-radius: var(--r2);
+  color: var(--g);
+  font-family: var(--fd); font-size: 0.9rem; font-weight: 600;
+  backdrop-filter: blur(16px);
+  z-index: 9000;
+  transform: translateY(100px); opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* ===== LOADING SPINNER ===== */
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* ===== PORTFOLIO ITEM MOCKUP EFFECTS ===== */
+
+/* --- Laptop Mockup (custom.html portfolio cards) --- */
+.laptop{width:100%;height:100%;background:linear-gradient(135deg,#0a0a0a,#1a1205);display:flex;align-items:center;justify-content:center;padding:16px}
+.lframe{width:92%;max-width:460px;background:#222;border-radius:10px 10px 4px 4px;border:2px solid #444;box-shadow:0 8px 40px rgba(0,0,0,.8),0 0 0 1px #333}
+.lscreen{background:#f5e6c8;border-radius:8px 8px 0 0;overflow:hidden;aspect-ratio:16/9}
+.lbase{height:10px;background:linear-gradient(#333,#222);border-radius:0 0 4px 4px;position:relative}
+.lbase::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:40%;height:3px;background:#444;border-radius:2px 2px 0 0}
+.lnav{background:#f5e6c8;display:flex;align-items:center;justify-content:space-between;padding:4px 8px;border-bottom:1px solid #d4b896}
+.lnav-logo{font-size:.45rem;font-weight:900;color:#8B4513;letter-spacing:.08em}
+.lnav-links{display:flex;gap:6px}
+.lnav-links span{font-size:.3rem;color:#666;font-weight:600}
+.lbtn{font-size:.28rem;background:#8B4513;color:#fff;padding:2px 5px;border-radius:3px;font-weight:700}
+.lhero{display:flex;align-items:center;padding:8px;gap:6px;min-height:40px}
+.lproduct{flex:1}
+.lpname{font-size:.6rem;font-weight:900;color:#3d1f00;line-height:1;letter-spacing:.02em}
+.lpsub{font-size:.32rem;color:#8B4513;letter-spacing:.15em;margin-bottom:3px;font-weight:700}
+.lpdesc{font-size:.28rem;color:#666;line-height:1.4;margin-bottom:4px}
+.lprice{font-size:.5rem;font-weight:900;color:#8B4513}
+.lpbtn{font-size:.28rem;background:#8B4513;color:#fff;padding:2px 6px;border-radius:3px;display:inline-block;margin-top:2px;font-weight:700}
+.limg{width:50px;height:50px;background:radial-gradient(circle at 40% 35%,rgba(139,69,19,.3),transparent 70%);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0}
+.lstats{display:flex;gap:6px;padding:4px 8px;background:#ece0cd;border-top:1px solid #d4b896}
+.lstat{flex:1;text-align:center}
+.lstat-num{font-size:.5rem;font-weight:900;color:#8B4513}
+.lstat-label{font-size:.25rem;color:#999;font-weight:600;letter-spacing:.05em}

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="VisionXSystems Portfolio — Web Design, UI/UX, Logo Design, Mobile Apps. 12 curated projects showcasing premium digital craftsmanship."/>
+<meta property="og:title" content="Portfolio — VisionXSystems"/>
+<meta property="og:image" content="images/logo-transparent.png"/>
+<title>Portfolio — VisionXSystems</title>
+<link rel="icon" type="image/png" href="images/favicon-32.png"/>
+<link rel="apple-touch-icon" href="images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="css/pages.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+/* ===== PORTFOLIO PAGE GRID (3×4 = 12 items) ===== */
+.port-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.port-item {
+  border-radius: var(--r3);
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: opacity .4s ease, transform .4s ease, border-color .3s, box-shadow .3s;
+  cursor: pointer;
+}
+.port-item.wide { grid-column: span 2; }
+.port-item:hover {
+  border-color: var(--bgreen);
+  box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 30px rgba(0,220,130,.12);
+  transform: translateY(-6px);
+}
+.port-item.hidden {
+  opacity: 0; transform: scale(.95);
+  pointer-events: none; display: none;
+}
+.port-pci {
+  position: relative; width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden; background: var(--bg2);
+}
+.port-pov {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(0,220,130,.93), rgba(0,30,20,.96));
+  display: flex; align-items: flex-end;
+  padding: 28px; opacity: 0; transition: opacity .4s ease;
+}
+.port-item:hover .port-pov { opacity: 1; }
+.port-poc { color: #000; }
+.port-pct {
+  display: inline-block;
+  font-family: var(--fd); font-size: .65rem; font-weight: 800;
+  letter-spacing: .12em; background: rgba(0,0,0,.2); color: #000;
+  padding: 3px 10px; border-radius: 50px; margin-bottom: 8px;
+}
+.port-poc h4 { font-family: var(--fd); font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; color: #000; }
+.port-poc p { font-size: .8rem; color: rgba(0,0,0,.75); line-height: 1.5; margin-bottom: 12px; }
+.port-pts { display: flex; flex-wrap: wrap; gap: 6px; }
+.port-pts span { font-size: .65rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; background: rgba(0,0,0,.2); color: #000; }
+.port-info { padding: 20px 24px 24px; }
+.port-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+.port-meta h4 { font-family: var(--fd); font-size: 1rem; font-weight: 700; }
+.port-info > p { font-size: .85rem; color: var(--t2); line-height: 1.6; }
+
+/* Placeholder style for image-awaited slots */
+.placeholder-slot {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--bg2), rgba(0,220,130,0.03));
+}
+.placeholder-icon { font-size: 3rem; opacity: 0.3; }
+.placeholder-label {
+  font-family: var(--fd); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.12em; color: var(--t3);
+}
+.placeholder-coming {
+  font-size: 0.65rem; color: var(--t3);
+  border: 1px solid var(--border); border-radius: 50px;
+  padding: 3px 10px;
+}
+
+@media (max-width: 1024px) {
+  .port-grid { grid-template-columns: repeat(2, 1fr); }
+  .port-item.wide { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .port-grid { grid-template-columns: 1fr; }
+  .port-item.wide { grid-column: span 1; }
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<header class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link">
+      <img src="images/logo-transparent.png" alt="VisionXSystems Logo" style="height:36px; width:auto;"/>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html"     class="nav-link" id="nav-home">Home</a>
+      <a href="services.html"  class="nav-link" id="nav-services">Services</a>
+      <a href="portfolio.html" class="nav-link active" id="nav-portfolio">Portfolio</a>
+      <a href="contact.html"   class="nav-link" id="nav-contact">Contact</a>
+    </nav>
+    <a href="contact.html" class="bp nav-cta" id="nav-cta">Get in Touch</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html"     class="mobile-link">Home</a>
+    <a href="services.html"  class="mobile-link">Services</a>
+    <a href="portfolio.html" class="mobile-link">Portfolio</a>
+    <a href="contact.html"   class="mobile-link">Contact</a>
+    <a href="contact.html"   class="bp mobile-cta">Get in Touch</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero" id="portfolio-top">
+  <div class="hero-grid"></div>
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="page-hero-inner">
+    <div class="hero-badge afu"><span class="badge-dot"></span>OUR WORK</div>
+    <h1 class="page-hero-title afu d1">Featured <span class="gt">Portfolio</span></h1>
+    <p class="page-hero-sub afu d2">A curated showcase of web designs, UI/UX systems and brand identities we have crafted with precision.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section style="padding:80px 0 120px;position:relative;z-index:1;" id="portfolio-grid-section">
+  <div class="container">
+
+    <!-- FILTERS -->
+    <div class="portfolio-filters" id="portfolio-filters">
+      <button class="filter-btn active" data-filter="all" id="pf-all">All Work</button>
+      <button class="filter-btn" data-filter="web" id="pf-web">Web Design</button>
+      <button class="filter-btn" data-filter="figma" id="pf-figma">UI / UX</button>
+      <button class="filter-btn" data-filter="logo" id="pf-logo">Logos</button>
+    </div>
+
+    <!-- GRID (12 items: 8 CSS mockups + 4 image placeholders) -->
+    <div class="port-grid" id="portfolio-main-grid">
+
+      <!-- 1. LUXE eCommerce (WIDE) -->
+      <div class="port-item wide reveal" data-cat="web" id="port-luxe">
+        <div class="port-pci">
+          <div class="laptop">
+            <div class="lframe">
+              <div class="lscreen">
+                <div class="lnav">
+                  <div class="lnav-logo">LUXE</div>
+                  <div class="lnav-links"><span>Shop</span><span>New</span><span>Sale</span></div>
+                  <div class="lbtn">BUY NOW</div>
+                </div>
+                <div class="lhero">
+                  <div class="lproduct">
+                    <div class="lpsub">LIMITED EDITION</div>
+                    <div class="lpname">OUD ROYAL<br/>ELIXIR</div>
+                    <div class="lpdesc">A rare blend of aged oud, saffron and musk — crafted for those who command attention.</div>
+                    <div class="lprice">PKR 8,500</div>
+                    <div class="lpbtn">ADD TO CART</div>
+                  </div>
+                  <div class="limg">&#127797;</div>
+                </div>
+                <div class="lstats">
+                  <div class="lstat"><div class="lstat-num">55%</div><div class="lstat-label">TOP SELLER</div></div>
+                  <div class="lstat"><div class="lstat-num">34%</div><div class="lstat-label">REPEAT BUY</div></div>
+                  <div class="lstat"><div class="lstat-num">12%</div><div class="lstat-label">NEW BUYERS</div></div>
+                </div>
+              </div>
+              <div class="lbase"></div>
+            </div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">WEB DESIGN</span><h4>LUXE Perfume Store</h4><p>Dark luxury eCommerce with vintage cream palette, animated product reveals and bold editorial typography.</p><div class="port-pts"><span>Shopify</span><span>Figma</span><span>GSAP</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>LUXE — Luxury eCommerce</h4><span class="pbadge wb">Web Design</span></div><p>Vintage-cream Shopify store inspired by editorial luxury brands with immersive product hero.</p></div>
+      </div>
+
+      <!-- 2. SaaS Dashboard -->
+      <div class="port-item reveal" data-cat="web" id="port-saas">
+        <div class="port-pci">
+          <div class="dash">
+            <div class="dframe">
+              <div class="dtop"><div class="ddot dd1"></div><div class="ddot dd2"></div><div class="ddot dd3"></div><div class="dtitle">DATAFLOW ANALYTICS</div></div>
+              <div class="dbody">
+                <div class="dside"><div class="dsi act"></div><div class="dsi"></div><div class="dsi"></div><div class="dsi"></div></div>
+                <div class="dmain">
+                  <div class="drow">
+                    <div class="dcard"><div class="dcard-title">REVENUE</div><div class="dcard-val">$84.2K</div><div class="dcard-sub">↑ 12% this month</div></div>
+                    <div class="dcard"><div class="dcard-title">USERS</div><div class="dcard-val">12.4K</div><div class="dcard-sub">↑ 8% this week</div></div>
+                    <div class="dcard"><div class="dcard-title">CONV.</div><div class="dcard-val">3.8%</div><div class="dcard-sub">↑ 0.4% this month</div></div>
+                  </div>
+                  <div class="dcard" style="flex:none;">
+                    <div class="dcard-title">MONTHLY REVENUE</div>
+                    <div class="chart-area">
+                      <div class="bar" style="height:40%"></div><div class="bar" style="height:60%"></div><div class="bar" style="height:45%"></div>
+                      <div class="bar" style="height:80%"></div><div class="bar" style="height:65%"></div><div class="bar" style="height:90%"></div><div class="bar" style="height:100%"></div>
+                    </div>
+                  </div>
+                  <div class="dtable">
+                    <div class="dth"><span>CLIENT</span><span>STATUS</span><span>REVENUE</span></div>
+                    <div class="dtr"><span>Acme Corp</span><span>Active</span><span>$12,400</span></div>
+                    <div class="dtr"><span>NexaTech</span><span>Active</span><span>$8,900</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">WEB DESIGN</span><h4>DataFlow SaaS Dashboard</h4><p>Analytics dashboard with real-time charts, dark teal UI and live data tables.</p><div class="port-pts"><span>React</span><span>Figma</span><span>D3.js</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>DataFlow — SaaS Dashboard</h4><span class="pbadge wb">Web Design</span></div><p>Teal-dark SaaS analytics platform with charts, revenue cards and live client table.</p></div>
+      </div>
+
+      <!-- 3. Nike App (WIDE) -->
+      <div class="port-item wide reveal" data-cat="figma" id="port-nike">
+        <div class="port-pci">
+          <div class="phones">
+            <div class="ph phm">
+              <div class="phn"></div>
+              <div class="phsc">
+                <div class="nk-hero"><div class="nk-hero-label">NIKE AIR</div><div class="nk-hero-title">FORCE<br/>1'07</div></div>
+                <div class="nk-body">
+                  <div class="nk-shoe">&#128652;</div>
+                  <div class="nk-brand">Nike AIR</div>
+                  <div class="nk-name">Air Force 1 '07</div>
+                  <div class="nk-price">$120.00</div>
+                  <div class="nk-stars">★★★★★</div>
+                  <div class="nk-sizes"><div class="nk-sz sel">8</div><div class="nk-sz unsel">9</div><div class="nk-sz unsel">10</div><div class="nk-sz unsel">11</div></div>
+                  <div class="nk-cta">ADD TO BAG</div>
+                </div>
+              </div>
+            </div>
+            <div class="ph phs">
+              <div class="phn"></div>
+              <div class="phsc">
+                <div class="nk-tabs"><div class="nk-tab act">New</div><div class="nk-tab">Running</div><div class="nk-tab">Jordan</div></div>
+                <div class="nk-catalog">
+                  <div class="nk-item"><div class="nk-item-shoe">&#128652;</div><div class="nk-item-name">Air Max 270</div><div class="nk-item-sub">Men's Shoes · $150</div><div class="nk-add">+</div></div>
+                  <div class="nk-item"><div class="nk-item-shoe">&#128652;</div><div class="nk-item-name">React Infinity</div><div class="nk-item-sub">Women's · $160</div><div class="nk-add">+</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">FIGMA UI/UX</span><h4>Nike Air — Mobile App</h4><p>Premium sneaker shopping app with product detail, catalog and checkout flows.</p><div class="port-pts"><span>Figma</span><span>Auto Layout</span><span>Prototype</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>Nike Air — Mobile App UI</h4><span class="pbadge fb3">Figma UI/UX</span></div><p>Full mobile UI kit: product hero, catalog listing, size selector, and add-to-bag flow.</p></div>
+      </div>
+
+      <!-- 4. Furniture Website -->
+      <div class="port-item reveal" data-cat="web" id="port-furn1">
+        <div class="port-pci">
+          <div style="width:100%;height:100%;background: url('images/portfolio1.png') center/cover no-repeat;">
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">WEB DESIGN</span><h4>Furniture Website</h4><p>Modern, responsive e-commerce platform for furniture.</p><div class="port-pts"><span>Web Design</span><span>eCommerce</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>Furniture Website</h4><span class="pbadge wb">Web Design</span></div><p>Responsive e-commerce platform built for modern furniture businesses.</p></div>
+      </div>
+
+      <!-- 4b. Office Furniture Website -->
+      <div class="port-item reveal" data-cat="web" id="port-furn2">
+        <div class="port-pci">
+          <div style="width:100%;height:100%;background: url('images/portfolio2.png') center/cover no-repeat;">
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">WEB DESIGN</span><h4>Office Furniture Website</h4><p>Premium online store for office setups and professional spaces.</p><div class="port-pts"><span>Web Design</span><span>eCommerce</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>Office Furniture Website</h4><span class="pbadge wb">Web Design</span></div><p>Premium online store for modern office setups and professional spaces.</p></div>
+      </div>
+
+      <!-- 5. Auth + Checkout Phones -->
+      <div class="port-item reveal" data-cat="figma" id="port-auth">
+        <div class="port-pci">
+          <div class="auth-screens">
+            <div class="auth-ph ap-m">
+              <div class="ap-notch"></div>
+              <div class="ap-sc">
+                <div class="lp-logo">&#128274;</div>
+                <div class="lp-title">Welcome Back</div>
+                <div class="lp-sub">Sign in to continue</div>
+                <div class="lp-field"><div class="lp-label">EMAIL</div><div class="lp-val">user@email.com</div></div>
+                <div class="lp-field"><div class="lp-label">PASSWORD</div><div class="lp-val">••••••••</div></div>
+                <div class="lp-forgot">Forgot password?</div>
+                <div class="lp-btn">SIGN IN</div>
+                <div class="lp-or">— or continue with —</div>
+                <div class="lp-social">&#127760; Google</div>
+              </div>
+            </div>
+            <div class="auth-ph ap-s">
+              <div class="ap-notch"></div>
+              <div class="ap-sc">
+                <div class="ck-title">CHECKOUT</div>
+                <div class="ck-item"><div class="ck-thumb">&#128652;</div><div><div class="ck-iname">Air Force 1</div><div class="ck-isub">Size 9 · White</div></div><div class="ck-ipr">$120</div></div>
+                <div class="ck-pm-title">PAYMENT</div>
+                <div class="ck-pm"><div class="ck-pm-opt sel">Card</div><div class="ck-pm-opt">PayPal</div><div class="ck-pm-opt">Apple Pay</div></div>
+                <div class="ck-input"><div class="ck-il">CARD NUMBER</div><div class="ck-iv">•••• •••• •••• 4242</div></div>
+                <div class="ck-btn">PAY NOW</div>
+              </div>
+            </div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">FIGMA UI/UX</span><h4>Auth &amp; Checkout Screens</h4><p>Login, signup, and checkout UI design for a dark e-commerce mobile app.</p><div class="port-pts"><span>Figma</span><span>Components</span><span>UX Flow</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>Auth &amp; Checkout UI</h4><span class="pbadge fb3">Figma UI/UX</span></div><p>Dark e-commerce auth screens with login, forgot password, and checkout payment flow.</p></div>
+      </div>
+
+      <!-- 6. BITEZO Food App -->
+      <div class="port-item reveal" data-cat="figma" id="port-bitezo">
+        <div class="port-pci">
+          <div class="food-screens">
+            <div class="fp fpm">
+              <div class="fp-notch"></div>
+              <div class="fp-sc">
+                <div class="fd-top"><div class="fd-loc">&#128205; Deliver to</div><div class="fd-city">Karachi, PK</div><div class="fd-search">&#128269; Search restaurants...</div></div>
+                <div class="fd-cats"><div class="fd-cat act"><div class="fd-cat-icon">&#127829;</div><div class="fd-cat-name">Pizza</div></div><div class="fd-cat"><div class="fd-cat-icon">&#127828;</div><div class="fd-cat-name">Burger</div></div><div class="fd-cat"><div class="fd-cat-icon">&#127859;</div><div class="fd-cat-name">Sushi</div></div></div>
+                <div class="fd-rest-title">NEARBY</div>
+                <div class="fd-rest"><div class="fd-rimg">&#127829;</div><div><div class="fd-rname">Pizza Palace</div><div class="fd-rcuisine">Italian · Pizza</div><div class="fd-rmeta"><span class="fd-rrating">★ 4.8</span><span class="fd-rtime">20–30 min</span></div></div></div>
+              </div>
+            </div>
+            <div class="fp fps">
+              <div class="fp-notch"></div>
+              <div class="fp-sc">
+                <div class="fd-dimg">&#127829;</div>
+                <div class="fd-dbody">
+                  <div class="fd-dname">Margherita Special</div>
+                  <div class="fd-dprice">PKR 1,200</div>
+                  <div class="fd-ddesc">Fresh mozzarella, san marzano tomatoes, fresh basil.</div>
+                  <div class="fd-dqty"><div class="fd-qbtn">-</div><div class="fd-qnum">2</div><div class="fd-qbtn">+</div></div>
+                  <div class="fd-dadd">ADD TO CART - PKR 2,400</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">FIGMA UI/UX</span><h4>BITEZO — Food Delivery</h4><p>Dark orange mobile app for food delivery with smooth UX and location features.</p><div class="port-pts"><span>Figma</span><span>Auto Layout</span><span>Components</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>BITEZO — Food Delivery App</h4><span class="pbadge fb3">Figma UI/UX</span></div><p>Full mobile UI kit: home, restaurant listing, product detail, cart and order tracking screens.</p></div>
+      </div>
+
+      <!-- 7. FITPULSE Fitness -->
+      <div class="port-item reveal" data-cat="figma" id="port-fitpulse">
+        <div class="port-pci">
+          <div class="fit-screens">
+            <div class="fitp fitpm">
+              <div class="fitp-notch"></div>
+              <div class="fitp-sc">
+                <div class="ft-top"><div class="ft-greet">Good Morning,</div><div class="ft-name">Ahmed Khan &#128170;</div><div class="ft-streak"><span class="ft-streak-icon">&#128293;</span><span class="ft-streak-text">14-day streak!</span></div></div>
+                <div class="ft-ring"><div class="ft-ring-inner"><div class="ft-pct">72%</div><div class="ft-label">Goal</div></div></div>
+                <div class="ft-stats"><div class="ft-stat"><div class="ft-stat-val">1,840</div><div class="ft-stat-label">Calories</div></div><div class="ft-stat"><div class="ft-stat-val">8.2K</div><div class="ft-stat-label">Steps</div></div><div class="ft-stat"><div class="ft-stat-val">48m</div><div class="ft-stat-label">Active</div></div></div>
+                <div class="ft-workout-title">TODAY'S WORKOUT</div>
+                <div class="ft-exercise"><span class="ft-ex-icon">&#127947;</span><div><div class="ft-ex-name">Bench Press</div><div class="ft-ex-sets">4 sets x 10 reps</div></div><div class="ft-ex-check done"></div></div>
+                <div class="ft-exercise"><span class="ft-ex-icon">&#127939;</span><div><div class="ft-ex-name">5K Run</div><div class="ft-ex-sets">Cardio - 30 min</div></div><div class="ft-ex-check"></div></div>
+              </div>
+            </div>
+            <div class="fitp fitps">
+              <div class="fitp-notch"></div>
+              <div class="fitp-sc">
+                <div class="ft-prog-top"><div class="ft-prog-title">Weekly Progress</div><div class="ft-prog-sub">This week vs last week</div></div>
+                <div class="ft-chart"><div class="ft-chart-title">CALORIES BURNED</div><div class="ft-bars"><div class="ft-bar" style="height:50%"></div><div class="ft-bar" style="height:70%"></div><div class="ft-bar" style="height:55%"></div><div class="ft-bar" style="height:85%"></div><div class="ft-bar" style="height:65%"></div><div class="ft-bar" style="height:90%"></div><div class="ft-bar" style="height:100%"></div></div><div class="ft-days"><span class="ft-day">M</span><span class="ft-day">T</span><span class="ft-day">W</span><span class="ft-day">T</span><span class="ft-day">F</span><span class="ft-day">S</span><span class="ft-day">S</span></div></div>
+                <div class="ft-macros"><div class="ft-macro"><div class="ft-macro-val">142g</div><div class="ft-macro-label">Protein</div></div><div class="ft-macro"><div class="ft-macro-val">210g</div><div class="ft-macro-label">Carbs</div></div><div class="ft-macro"><div class="ft-macro-val">58g</div><div class="ft-macro-label">Fats</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">FIGMA UI/UX</span><h4>FITPULSE — Fitness App</h4><p>Purple dark-mode fitness tracker with workout flows, progress rings and weekly charts.</p><div class="port-pts"><span>Figma</span><span>Prototype</span><span>Dark UI</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>FITPULSE — Fitness App</h4><span class="pbadge fb3">Figma UI/UX</span></div><p>Full fitness app UI with workout tracking, progress rings, macro tracker and exercise cards.</p></div>
+      </div>
+
+      <!-- 8. Brand Identity Collection (WIDE) -->
+      <div class="port-item wide reveal" data-cat="logo" id="port-logos">
+        <div class="port-pci">
+          <div class="logo-grid">
+            <div class="lg-item"><div class="lg-icon" style="color:#00dc82">&#9651;</div><div class="lg-name lg1">NEXATECH</div><div class="lg-type">Tech Company</div></div>
+            <div class="lg-item"><div class="lg-icon" style="color:#ff6b00">&#9711;</div><div class="lg-name lg2">BITEZO</div><div class="lg-type">Food App</div></div>
+            <div class="lg-item"><div class="lg-icon" style="color:#a855f7">&#9889;</div><div class="lg-name lg3">FITPULSE</div><div class="lg-type">Fitness Brand</div></div>
+            <div class="lg-item"><div class="lg-icon" style="color:#00c8ff">&#9670;</div><div class="lg-name lg4">DATAFLOW</div><div class="lg-type">SaaS Platform</div></div>
+            <div class="lg-item"><div class="lg-icon" style="color:#f5c518">&#10022;</div><div class="lg-name lg5">URBANE</div><div class="lg-type">Fashion Brand</div></div>
+            <div class="lg-item"><div class="lg-icon" style="color:#ff6b6b">&#10064;</div><div class="lg-name lg6">ARTISAN</div><div class="lg-type">Creative Studio</div></div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">LOGO DESIGN</span><h4>Brand Identity Collection</h4><p>6 minimalist logos for tech, food, fitness, fashion and SaaS brands.</p><div class="port-pts"><span>Illustrator</span><span>Figma</span><span>Branding</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>Brand Identity Collection</h4><span class="pbadge lb">Logo Design</span></div><p>Minimalist, scalable logos for NexaTech, BITEZO, FitPulse, URBANE, Artisan and DataFlow.</p></div>
+      </div>
+
+      <!-- 9. CAMCORE Vintage Logo -->
+      <div class="port-item reveal" data-cat="logo" id="port-camcore">
+        <div class="port-pci">
+          <div class="camcore">
+            <div class="cc-inner">
+              <div class="cc-line"></div>
+              <div class="cc-brand">CAMCORE</div>
+              <div class="cc-sub">AGENCY</div>
+              <span class="cc-icon">&#128247;</span>
+              <div class="cc-tag">EST. 2024 &bull; PREMIUM VISUAL STUDIO</div>
+              <div class="cc-line2"></div>
+            </div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">LOGO DESIGN</span><h4>CAMCORE Agency</h4><p>Vintage bold branding with editorial typography and warm gold tones.</p><div class="port-pts"><span>Illustrator</span><span>Brand Identity</span></div></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>CAMCORE — Brand Identity</h4><span class="pbadge lb">Logo Design</span></div><p>Vintage photography agency logo with bold serif typography and gold grunge aesthetic.</p></div>
+      </div>
+
+
+
+      <!-- 12. Image Placeholder 4 (Logo) -->
+      <div class="port-item reveal" data-cat="logo" id="port-ph4">
+        <div class="port-pci">
+          <div class="placeholder-slot" style="background:linear-gradient(135deg,#0a0a0a,#1a1205);">
+            <div class="placeholder-icon">&#127775;</div>
+            <div class="placeholder-label" style="color:#ffc107;">BRAND IDENTITY</div>
+            <div class="placeholder-coming">Image Coming Soon</div>
+          </div>
+          <div class="port-pov"><div class="port-poc"><span class="port-pct">LOGO DESIGN</span><h4>Brand Identity</h4><p>New logo &amp; brand identity project coming soon.</p></div></div>
+        </div>
+        <div class="port-info"><div class="port-meta"><h4>Brand Identity — Coming Soon</h4><span class="pbadge lb">Logo Design</span></div><p>Placeholder — new branding project will be added upon upload.</p></div>
+      </div>
+
+    </div><!-- end port-grid -->
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-top:80px;">
+      <p style="color:var(--t2);margin-bottom:24px;font-size:1rem;">Interested in working together? Let's make something great.</p>
+      <a href="contact.html" class="bp btn-large" id="portfolio-cta">Start a Project &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-wrap">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo-transparent.png" alt="VisionXSystems Logo" style="height:36px; width:auto;"/>
+        </a>
+      </div>
+      <p class="footer-tagline">Premium software house building AI systems, web platforms, and digital products that drive real business results.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <a href="#" data-filter-link="web">Web Design</a>
+        <a href="#" data-filter-link="figma">UI / UX</a>
+        <a href="#" data-filter-link="logo">Logo Design</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:visionxsystem@gmail.com">visionxsystem@gmail.com</a>
+        <span>Response within 12 hours</span>
+        <span>Available worldwide</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 VisionXSystems. All rights reserved.</p>
+    <p>Crafted with &#10084;&#65039; for digital excellence.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Footer filter links
+document.querySelectorAll('[data-filter-link]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var f = this.dataset.filterLink;
+    var btn = document.querySelector('.filter-btn[data-filter="' + f + '"]');
+    if (btn) { btn.click(); window.scrollTo({ top: document.getElementById('portfolio-filters').offsetTop - 100, behavior: 'smooth' }); }
+  });
+});
+// Use port-item class for filter (remap to work with main.js)
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var f = btn.dataset.filter;
+    document.querySelectorAll('.port-item').forEach(function(item) {
+      var cat = item.dataset.cat;
+      if (f === 'all' || cat === f) {
+        item.style.display = '';
+        setTimeout(function() { item.style.opacity = '1'; item.style.transform = ''; }, 10);
+      } else {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.94)';
+        setTimeout(function() { item.style.display = 'none'; }, 350);
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

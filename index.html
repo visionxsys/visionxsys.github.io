@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="VisionXSystems — Premium Software House. We build enterprise-grade AI systems, web platforms, and digital products. Workflow, Process, and more."/>
+<meta property="og:title" content="VisionXSystems — Premium Software Agency"/>
+<meta property="og:description" content="Software Solutions That Drive Growth &amp; Revenue. Enterprise-grade AI, web platforms &amp; digital products."/>
+<meta property="og:image" content="images/logo-transparent.png"/>
+<meta property="og:type" content="website"/>
+<title>VisionXSystems — Premium Software Agency</title>
+<link rel="icon" type="image/png" href="images/favicon-32.png"/>
+<link rel="apple-touch-icon" href="images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<header class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link">
+      <img src="images/logo-transparent.png" alt="VisionXSystems Logo" style="height:36px; width:auto;"/>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html"     class="nav-link" id="nav-home">Home</a>
+      <a href="services.html"  class="nav-link" id="nav-services">Services</a>
+      <a href="portfolio.html" class="nav-link" id="nav-portfolio">Portfolio</a>
+      <a href="contact.html"   class="nav-link" id="nav-contact">Contact</a>
+    </nav>
+    <a href="contact.html" class="bp nav-cta" id="nav-cta">Get in Touch</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html"     class="mobile-link">Home</a>
+    <a href="services.html"  class="mobile-link">Services</a>
+    <a href="portfolio.html" class="mobile-link">Portfolio</a>
+    <a href="contact.html"   class="mobile-link">Contact</a>
+    <a href="contact.html"   class="bp mobile-cta">Get in Touch</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge afu"><span class="badge-dot"></span>PREMIUM SOFTWARE HOUSE</div>
+      <h1 class="hero-title afu d1">
+        Software Solutions<br/>That <span class="gt">Drive Growth</span><br/>&amp; Revenue.
+      </h1>
+      <p class="hero-desc afu d2">We build enterprise-grade AI systems, web platforms, and digital products for businesses that refuse to settle for average.</p>
+      <div class="hero-actions afu d3">
+        <a href="contact.html" class="bp btn-large" id="hero-start">Start a Project</a>
+        <a href="portfolio.html" class="bo btn-large" id="hero-portfolio">View Portfolio &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <div class="stat-num" data-count="5" data-suffix="+">0+</div>
+      <div class="stat-label">PROJECT COMPLETED</div>
+    </div>
+    <div class="stat-item reveal" style="display:none;">
+      <div class="stat-num" data-count="15" data-suffix="+">0+</div>
+      <div class="stat-label">COUNTRIES SERVED</div>
+    </div>
+    <div class="stat-item reveal" style="display:none;">
+      <div class="stat-num" data-count="98" data-suffix="%">0%</div>
+      <div class="stat-label">CLIENT SATISFACTION</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num" data-count="24" data-suffix="h">0h</div>
+      <div class="stat-label">RESPONSE TIME</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES PREVIEW -->
+<section style="padding:120px 0;position:relative;z-index:1;" id="services-preview">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">WHAT WE OFFER</p>
+      <h2 class="section-title">Our <span class="gt">Services</span></h2>
+      <p class="section-sub">End-to-end digital solutions crafted to scale your business.</p>
+    </div>
+    <div class="services-grid">
+      <!-- Web Dev -->
+      <div class="service-card gc reveal featured" id="svc-web">
+        <div class="service-icon-wrap web">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="service-featured-tag">&#10024; MOST POPULAR</div>
+        <h3>Web Development</h3>
+        <p>Responsive, blazing-fast websites built to convert visitors into paying customers with pixel-perfect precision.</p>
+        <div class="service-tags"><span>React</span><span>Next.js</span><span>Node.js</span></div>
+        <div class="service-badge">CUSTOM BUILD</div>
+        <div class="service-line"></div>
+      </div>
+
+      <!-- WordPress -->
+      <div class="service-card gc reveal" id="svc-wp">
+        <div class="service-icon-wrap wp">
+          <i class="fa-brands fa-wordpress" style="font-size: 1.5rem;"></i>
+        </div>
+        <h3>WordPress</h3>
+        <p>Powerful WordPress websites with custom themes, plugins, and CMS setups built for speed and control.</p>
+        <div class="service-tags"><span>WooCommerce</span><span>CMS</span><span>SEO</span></div>
+        <div class="service-badge">CMS</div>
+        <div class="service-line"></div>
+      </div>
+
+      <div class="service-card gc reveal" id="svc-ai">
+        <div class="service-icon-wrap ai">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a2 2 0 0 1 2 2v1a7 7 0 0 1 0 14v1a2 2 0 0 1-4 0v-1a7 7 0 0 1 0-14V4a2 2 0 0 1 2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>AI Chatbot</h3>
+        <p>Smart AI-powered chatbots that automate support, qualify leads, and drive conversions around the clock.</p>
+        <div class="service-tags"><span>GPT-4</span><span>NLP</span><span>Automation</span></div>
+        <div class="service-badge">AI POWERED</div>
+        <div class="service-line"></div>
+      </div>
+
+      <!-- Figma Design -->
+      <div class="service-card gc reveal" id="svc-figma">
+        <div class="service-icon-wrap fig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 0 1-7 0z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/></svg>
+        </div>
+        <h3>Figma Design</h3>
+        <p>Stunning UI/UX designs in Figma — wireframes, prototypes, and design systems that delight users.</p>
+        <div class="service-tags"><span>UI/UX</span><span>Prototyping</span><span>Design System</span></div>
+        <div class="service-badge">DESIGN</div>
+        <div class="service-line"></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="services.html" class="bo btn-large" id="home-services-cta">View All Services &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW / HOW WE THINK -->
+<section class="workflow-section" id="workflow">
+  <div class="container">
+    <div class="workflow-grid">
+      <div class="workflow-content">
+        <p class="section-label">WHY VISIONXSYSTEMS</p>
+        <h2 class="section-title">Built Different.<br/><span class="gt">Results Driven.</span></h2>
+        <p class="workflow-desc">We are not just another agency. We are a strategic partner that obsesses over your success metrics. Every pixel, every line of code, every AI model is engineered to maximise your ROI.</p>
+        <ul class="workflow-list">
+          <li><span class="check-icon">&#10003;</span> 5+ successful projects completed globally</li>
+          <li><span class="check-icon">&#10003;</span> Industry-leading turnaround time</li>
+          <li><span class="check-icon">&#10003;</span> Transparent pricing, no hidden costs</li>
+          <li><span class="check-icon">&#10003;</span> Dedicated project manager for every client</li>
+          <li><span class="check-icon">&#10003;</span> Post-launch support included</li>
+        </ul>
+        <a href="contact.html" class="bp" id="workflow-cta">Let's Talk &rarr;</a>
+      </div>
+      <div class="workflow-cards">
+        <div class="workflow-card gc reveal">
+          <div class="wc-icon">&#9881;&#65039;</div>
+          <div><strong>AI-First Thinking</strong><p>Modern AI integrated into every build we ship.</p></div>
+        </div>
+        <div class="workflow-card gc reveal">
+          <div class="wc-icon">&#128274;</div>
+          <div><strong>Secure by Default</strong><p>Enterprise-grade security standards, always.</p></div>
+        </div>
+        <div class="workflow-card gc reveal">
+          <div class="wc-icon">&#128202;</div>
+          <div><strong>Data-Driven</strong><p>Analytics and insights baked in from day one.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">HOW WE WORK</p>
+      <h2 class="section-title">Our <span class="gt">Process</span></h2>
+      <p class="section-sub">A transparent, structured approach that delivers results on time.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-card gc reveal">
+          <h4>Discovery &amp; Strategy</h4>
+          <p>We deep-dive into your business goals, target audience, and competitive landscape to craft a winning digital strategy.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-card gc reveal">
+          <h4>Design &amp; Prototype</h4>
+          <p>Our designers create stunning wireframes and interactive prototypes in Figma before a single line of code is written.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-card gc reveal">
+          <h4>Development &amp; QA</h4>
+          <p>Engineers build scalable, clean-coded solutions with rigorous quality assurance and performance optimisation throughout.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <div class="process-card gc reveal">
+          <h4>Launch &amp; Support</h4>
+          <p>We handle deployment, monitoring, and provide ongoing support so your product stays fast, secure, and evolving.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">GOT QUESTIONS?</p>
+      <h2 class="section-title">Frequently Asked <span class="gt">Questions</span></h2>
+      <p class="section-sub">Service-specific answers to the things clients ask us most.</p>
+    </div>
+
+    <div class="faq-tabs">
+      <button class="faq-tab active" data-tab="general" id="faq-tab-general">General</button>
+      <button class="faq-tab" data-tab="web" id="faq-tab-web">Web Dev</button>
+      <button class="faq-tab" data-tab="ai" id="faq-tab-ai">AI &amp; Chatbot</button>
+      <button class="faq-tab" data-tab="design" id="faq-tab-design">Design &amp; UI/UX</button>
+    </div>
+
+    <!-- General -->
+    <div class="faq-panel active" id="faq-general">
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q1">
+          How long does a typical project take?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a1">
+          Timelines depend on scope. A landing page can be done in 5–7 days; a full web app or AI integration typically takes 3–8 weeks. We agree on clear milestones upfront so you always know where we are.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q2">
+          Do you offer revisions?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a2">
+          Yes. Every package includes revision rounds. Starter gets 2, Pro gets 4, and Enterprise gets unlimited revisions within the agreed scope.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q3">
+          How do payments work?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a3">
+          We operate on a 50% upfront, 50% on delivery model. For larger projects, we can split into milestone-based payments. We accept bank transfers and PayPal.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q4">
+          Can I request a custom package?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a4">
+          Absolutely. Contact us and describe your project — we'll build a tailored quote that fits your exact needs and budget.
+        </div>
+      </div>
+    </div>
+
+    <!-- Web Dev -->
+    <div class="faq-panel" id="faq-web">
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q5">
+          What tech stack do you use for web development?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a5">
+          We primarily use React, Next.js, and Node.js for modern web apps. For simpler sites we use semantic HTML/CSS/JS. We can also work with your existing stack if required.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q6">
+          Will my site be mobile-responsive?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a6">
+          Always. Every site we build is fully responsive and tested across multiple devices and browsers. Mobile-first is our default approach.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q7">
+          Do you handle hosting and deployment?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a7">
+          Yes. We can deploy to Vercel, Netlify, AWS, or your preferred host. We'll set up CI/CD pipelines, SSL, and domain configuration as needed.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q8">
+          Can you redesign my existing website?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a8">
+          Absolutely. We specialise in redesigns. We'll audit your current site, identify conversion problems, and deliver a modern, high-performing replacement.
+        </div>
+      </div>
+    </div>
+
+    <!-- AI -->
+    <div class="faq-panel" id="faq-ai">
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q9">
+          Which AI models do you use for chatbots?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a9">
+          We primarily use GPT-4o via the OpenAI API, but we also have experience with Claude, Gemini, and open-source models like LLaMA depending on your requirements and budget.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q10">
+          Can the chatbot be trained on my business data?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a10">
+          Yes. We implement RAG (Retrieval-Augmented Generation) to train the chatbot on your docs, FAQs, and product info. The bot will answer accurately from your own knowledge base.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q11">
+          Where can the chatbot be deployed?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a11">
+          Anywhere — your website, WhatsApp, Telegram, Discord, Slack, or any platform with a webhook or API. We build custom integrations for your stack.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q12">
+          Is my data secure with an AI integration?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a12">
+          We follow OWASP best practices and use encrypted communication. We never store sensitive data beyond what's needed. Enterprise plans include full data residency control.
+        </div>
+      </div>
+    </div>
+
+    <!-- Design -->
+    <div class="faq-panel" id="faq-design">
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q13">
+          Do you work in Figma only, or other tools too?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a13">
+          Figma is our primary tool. We also use Adobe Illustrator for logo and brand identity work, and After Effects or Rive for animations.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q14">
+          Will I get the source files?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a14">
+          Yes. Upon final payment you receive all source files — Figma files, layered PSDs, vector AI files, and export-ready assets in any format you need.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q15">
+          Can you create a full brand identity?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a15">
+          Yes. Our Enterprise design plan includes logo, colour palette, typography system, brand guidelines, social media kit, and UI component library.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" id="faq-q16">
+          Do you create explainer or product demo animations?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer" id="faq-a16">
+          Yes! Our 2D animation service covers explainer videos, product demos, SaaS onboarding flows, and social media motion graphics — all with professional voiceover coordination if needed.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO PREVIEW -->
+<section class="preview-section" id="portfolio-preview">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">FEATURED WORK</p>
+      <h2 class="section-title">Recent <span class="gt">Projects</span></h2>
+      <p class="section-sub">A glimpse of what we've built. Full portfolio available for review.</p>
+    </div>
+    <div class="preview-grid">
+      <div class="preview-card reveal" id="prev-web">
+        <div class="preview-img" style="background: url('images/portfolio1.png') center/cover no-repeat;">
+        </div>
+        <div class="preview-info">
+          <h4>Furniture Website</h4>
+          <p>Modern, responsive e-commerce platform for furniture.</p>
+        </div>
+      </div>
+      <div class="preview-card reveal" id="prev-saas">
+        <div class="preview-img" style="background: url('images/portfolio2.png') center/cover no-repeat;">
+        </div>
+        <div class="preview-info">
+          <h4>Office Furniture Website</h4>
+          <p>Premium online store for office setups and professional spaces.</p>
+        </div>
+      </div>
+    </div>
+    <div class="preview-cta">
+      <a href="portfolio.html" class="bp btn-large" id="home-portfolio-btn">See Full Portfolio &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-glow"></div>
+  <div class="cta-content">
+    <h2>Ready to Build Something<br/><span class="gt">Extraordinary?</span></h2>
+    <p>Let's turn your vision into a high-performing digital product.</p>
+    <a href="contact.html" class="bp btn-large" id="cta-banner-btn">Start Your Project Today</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-wrap">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo-transparent.png" alt="VisionXSystems Logo" style="height:36px; width:auto;"/>
+        </a>
+      </div>
+      <p class="footer-tagline">Premium software house building AI systems, web platforms, and digital products that drive real business results.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html">Web Development</a>
+        <a href="services.html">AI Chatbot</a>
+        <a href="services.html">Figma Design</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:visionxsystem@gmail.com">visionxsystem@gmail.com</a>
+        <span>Response within 12 hours</span>
+        <span>Available worldwide</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 VisionXSystems. All rights reserved.</p>
+    <p>Crafted with &#10084;&#65039; for digital excellence.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

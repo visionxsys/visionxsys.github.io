@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Contact VisionXSystems — Email, social channels, and project inquiry form. We respond within 12 hours."/>
+<meta property="og:title" content="Contact — VisionXSystems"/>
+<meta property="og:image" content="images/logo-transparent.png"/>
+<title>Contact — VisionXSystems</title>
+<link rel="icon" type="image/png" href="images/favicon-32.png"/>
+<link rel="apple-touch-icon" href="images/favicon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<header class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" id="logo-link">
+      <img src="images/logo-transparent.png" alt="VisionXSystems Logo" style="height:36px; width:auto;"/>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html"     class="nav-link" id="nav-home">Home</a>
+      <a href="services.html"  class="nav-link" id="nav-services">Services</a>
+      <a href="portfolio.html" class="nav-link" id="nav-portfolio">Portfolio</a>
+      <a href="contact.html"   class="nav-link active" id="nav-contact">Contact</a>
+    </nav>
+    <a href="contact.html" class="bp nav-cta" id="nav-cta">Get in Touch</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html"     class="mobile-link">Home</a>
+    <a href="services.html"  class="mobile-link">Services</a>
+    <a href="portfolio.html" class="mobile-link">Portfolio</a>
+    <a href="contact.html"   class="mobile-link">Contact</a>
+    <a href="contact.html"   class="bp mobile-cta">Get in Touch</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero" id="contact-top">
+  <div class="hero-grid"></div>
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="page-hero-inner">
+    <div class="hero-badge afu"><span class="badge-dot"></span>GET IN TOUCH</div>
+    <h1 class="page-hero-title afu d1">Let's Build <span class="gt">Together.</span></h1>
+    <p class="page-hero-sub afu d2">Have a project in mind? Drop us a message and we'll get back to you within 12 hours — no commitment required.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Left info -->
+      <div class="contact-info">
+        <p class="section-label" style="justify-content:flex-start;">CONTACT US</p>
+        <h2 class="section-title" style="text-align:left;">Ready to <span class="gt">Start?</span></h2>
+        <p class="contact-desc">We work with startups, agencies, and enterprises worldwide. Tell us about your project and let's turn your vision into a high-performing digital product.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="contact-detail-icon">&#128231;</span>
+            <a href="mailto:visionxsystem@gmail.com" id="contact-email">visionxsystem@gmail.com</a>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-icon">&#8987;</span>
+            <span>Response within 12 hours</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-icon">&#127758;</span>
+            <span>Available worldwide</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail-icon">&#128340;</span>
+            <span>Mon – Sat, 9AM – 11PM PKT</span>
+          </div>
+        </div>
+
+        <!-- Quick Social Icons -->
+        <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
+          <a href="https://instagram.com/visionxsys" target="_blank" rel="noopener" id="social-insta-icon" aria-label="Instagram"
+             style="width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--t2);transition:var(--tr);"
+             onmouseover="this.style.background='rgba(228,64,95,0.15)';this.style.borderColor='rgba(228,64,95,0.4)';this.style.color='#e4405f';this.style.transform='translateY(-3px)'"
+             onmouseout="this.style.background='var(--card)';this.style.borderColor='var(--border)';this.style.color='var(--t2)';this.style.transform=''">
+            <span class="fa-brands fa-instagram fa-lg"></span>
+          </a>
+          <a href="https://x.com/visionxsys" target="_blank" rel="noopener" id="social-x-icon" aria-label="X / Twitter"
+             style="width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--t2);transition:var(--tr);"
+             onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='var(--t1)';this.style.transform='translateY(-3px)'"
+             onmouseout="this.style.background='var(--card)';this.style.borderColor='var(--border)';this.style.color='var(--t2)';this.style.transform=''">
+            <span class="fa-brands fa-twitter fa-lg"></span>
+          </a>
+          <a href="https://linkedin.com/company/visionxsys" target="_blank" rel="noopener" id="social-li-icon" aria-label="LinkedIn"
+             style="width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--t2);transition:var(--tr);"
+             onmouseover="this.style.background='rgba(10,102,194,0.15)';this.style.borderColor='rgba(10,102,194,0.4)';this.style.color='#0a66c2';this.style.transform='translateY(-3px)'"
+             onmouseout="this.style.background='var(--card)';this.style.borderColor='var(--border)';this.style.color='var(--t2)';this.style.transform=''">
+            <span class="fa-brands fa-linkedin fa-lg"></span>
+          </a>
+          <a href="https://discord.gg/visionxsys" target="_blank" rel="noopener" id="social-dc-icon" aria-label="Discord"
+             style="width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--t2);transition:var(--tr);"
+             onmouseover="this.style.background='rgba(88,101,242,0.15)';this.style.borderColor='rgba(88,101,242,0.4)';this.style.color='#5865f2';this.style.transform='translateY(-3px)'"
+             onmouseout="this.style.background='var(--card)';this.style.borderColor='var(--border)';this.style.color='var(--t2)';this.style.transform=''">
+            <span class="fa-brands fa-discord fa-lg"></span>
+          </a>
+          <a href="https://reddit.com/r/visionxsys" target="_blank" rel="noopener" id="social-rd-icon" aria-label="Reddit"
+             style="width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--t2);transition:var(--tr);"
+             onmouseover="this.style.background='rgba(255,69,0,0.15)';this.style.borderColor='rgba(255,69,0,0.4)';this.style.color='#ff4500';this.style.transform='translateY(-3px)'"
+             onmouseout="this.style.background='var(--card)';this.style.borderColor='var(--border)';this.style.color='var(--t2)';this.style.transform=''">
+            <span class="fa-brands fa-reddit fa-lg"></span>
+          </a>
+          <a href="https://github.com/visionxsys" target="_blank" rel="noopener" id="social-gh-icon" aria-label="GitHub"
+             style="width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--t2);transition:var(--tr);"
+             onmouseover="this.style.background='rgba(110,118,129,0.15)';this.style.borderColor='rgba(110,118,129,0.4)';this.style.color='#c9d1d9';this.style.transform='translateY(-3px)'"
+             onmouseout="this.style.background='var(--card)';this.style.borderColor='var(--border)';this.style.color='var(--t2)';this.style.transform=''">
+            <span class="fa-brands fa-github fa-lg"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="contact-form gc" id="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="John Doe" required/></div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="john@example.com" required/></div>
+        </div>
+        <div class="form-group"><label for="service">Service Interested In</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option value="web">Web Development</option>
+            <option value="wordpress">WordPress</option>
+            <option value="ai">AI Chatbot</option>
+            <option value="figma">Figma Design</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="budget">Budget Range</label>
+          <select id="budget" name="budget">
+            <option value="">Select budget...</option>
+            <option value="under-200">Under $200</option>
+            <option value="200-500">$200 – $500</option>
+            <option value="200-1k">$500 – $1,000</option>
+            <option value="1k-5k">$1,000 – $5,000</option>
+            <option value="5k+">$5,000+</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="message">Project Details</label><textarea id="message" name="message" rows="5" placeholder="Tell us about your project, goals, and timeline..." required></textarea></div>
+        <button type="submit" class="bp btn-full" id="submit-btn"><span>Send Message</span><span>&#8594;</span></button>
+        <div class="form-success" id="form-success">&#9989; Message sent! We'll reply within 12 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL CARDS -->
+<section class="social-cards-section" id="socials">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">FIND US ONLINE</p>
+      <h2 class="section-title">Follow &amp; <span class="gt">Connect</span></h2>
+      <p class="section-sub">Join our community across platforms for updates, tips, and behind-the-scenes looks at our work.</p>
+    </div>
+
+    <div class="social-cards-grid">
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/visionxsys" target="_blank" rel="noopener"
+         class="social-card gc social-instagram" id="card-instagram">
+        <div class="social-card-icon">
+          <span class="fa-brands fa-instagram fa-2xl"></span>
+        </div>
+        <div class="social-card-platform">INSTAGRAM</div>
+        <div class="social-card-handle">@visionxsys</div>
+        <div class="social-card-desc">Behind-the-scenes, design inspiration, project highlights and creative process.</div>
+        <div class="social-card-arrow" style="color:#e4405f;">Follow on Instagram ↗</div>
+      </a>
+
+      <!-- X / Twitter -->
+      <a href="https://x.com/visionxsys" target="_blank" rel="noopener"
+         class="social-card gc social-x" id="card-x">
+        <div class="social-card-icon">
+          <span class="fa-brands fa-twitter fa-2xl"></span>
+        </div>
+        <div class="social-card-platform">X / TWITTER</div>
+        <div class="social-card-handle">@visionxsys</div>
+        <div class="social-card-desc">Industry insights, tech threads, quick tips and real-time project updates.</div>
+        <div class="social-card-arrow" style="color:var(--t1);">Follow on X ↗</div>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/company/visionxsys" target="_blank" rel="noopener"
+         class="social-card gc social-linkedin" id="card-linkedin">
+        <div class="social-card-icon">
+          <span class="fa-brands fa-linkedin fa-2xl"></span>
+        </div>
+        <div class="social-card-platform">LINKEDIN</div>
+        <div class="social-card-handle">@visionxsys</div>
+        <div class="social-card-desc">Professional updates, case studies, team milestones and B2B insights.</div>
+        <div class="social-card-arrow" style="color:#0a66c2;">Connect on LinkedIn ↗</div>
+      </a>
+
+      <!-- Discord -->
+      <a href="https://discord.gg/visionxsys" target="_blank" rel="noopener"
+         class="social-card gc social-discord" id="card-discord">
+        <div class="social-card-icon">
+          <span class="fa-brands fa-discord fa-2xl"></span>
+        </div>
+        <div class="social-card-platform">DISCORD</div>
+        <div class="social-card-handle">@visionxsys</div>
+        <div class="social-card-desc">Join our community server — ask questions, share ideas, and network with our team.</div>
+        <div class="social-card-arrow" style="color:#5865f2;">Join our Discord ↗</div>
+      </a>
+
+      <!-- Reddit -->
+      <a href="https://reddit.com/r/visionxsys" target="_blank" rel="noopener"
+         class="social-card gc social-reddit" id="card-reddit">
+        <div class="social-card-icon">
+          <span class="fa-brands fa-reddit fa-2xl"></span>
+        </div>
+        <div class="social-card-platform">REDDIT</div>
+        <div class="social-card-handle">r/visionxsys</div>
+        <div class="social-card-desc">Discussion threads, project showcases, feedback and open source conversations.</div>
+        <div class="social-card-arrow" style="color:#ff4500;">Join Subreddit ↗</div>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/visionxsys" target="_blank" rel="noopener"
+         class="social-card gc social-github" id="card-github">
+        <div class="social-card-icon">
+          <span class="fa-brands fa-github fa-2xl"></span>
+        </div>
+        <div class="social-card-platform">GITHUB</div>
+        <div class="social-card-handle">@visionxsys</div>
+        <div class="social-card-desc">Open source tools, code snippets, and technical repositories from our engineering team.</div>
+        <div class="social-card-arrow" style="color:#c9d1d9;">Follow on GitHub ↗</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-glow"></div>
+  <div class="cta-content">
+    <h2>Ready to Build Something<br/><span class="gt">Extraordinary?</span></h2>
+    <p>Let's turn your vision into a high-performing digital product.</p>
+    <a href="mailto:visionxsystem@gmail.com" class="bp btn-large" id="cta-email-btn">&#128231; Email Us Directly</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-wrap">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo-transparent.png" alt="VisionXSystems Logo" style="height:36px; width:auto;"/>
+        </a>
+      </div>
+      <p class="footer-tagline">Premium software house building AI systems, web platforms, and digital products that drive real business results.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html">Web Development</a>
+        <a href="services.html">AI Chatbot</a>
+        <a href="services.html">Figma Design</a>
+      </div>
+      <div class="footer-col">
+        <h5>Socials</h5>
+        <a href="https://instagram.com/visionxsys" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://x.com/visionxsys" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://linkedin.com/company/visionxsys" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://discord.gg/visionxsys" target="_blank" rel="noopener">Discord</a>
+        <a href="https://reddit.com/r/visionxsys" target="_blank" rel="noopener">Reddit</a>
+        <a href="https://github.com/visionxsys" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:visionxsystem@gmail.com">visionxsystem@gmail.com</a>
+        <span>Response within 12 hours</span>
+        <span>Mon – Sat, 9AM – 11PM PKT</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 VisionXSystems. All rights reserved.</p>
+    <p>Crafted with &#10084;&#65039; for digital excellence.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
